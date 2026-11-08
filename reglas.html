@@ -13,7 +13,7 @@
   <div class="cab-in">
     <a class="marca" href="index.html"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="#e8730c" stroke="#0f2a43" stroke-width="2"/><path d="M16 2v28M2 16h28M5.5 5.5c6 5 6 16 0 21M26.5 5.5c-6 5-6 16 0 21" fill="none" stroke="#0f2a43" stroke-width="1.8"/></svg><span>La Liga de la Parábola</span></a>
     <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menú</button>
-    <nav id="nav" aria-label="Principal"><a href="index.html">Inicio</a><a href="equipo.html">Mi equipo</a><a href="calendario.html">Calendario</a><a href="reglas.html" aria-current="page">Reglas</a><a href="misiones.html">Misiones</a><a href="recursos.html">Recursos</a><a href="bitacora.html">Bitácora</a></nav>
+    <nav id="nav" aria-label="Principal"><a href="index.html">Inicio</a><a href="historia.html">Historia</a><a href="equipo.html">Mi equipo</a><a href="calendario.html">Calendario</a><a href="reglas.html" aria-current="page">Reglas</a><a href="misiones.html">Misiones</a><a href="recursos.html">Recursos</a><a href="bitacora.html">Bitácora</a></nav>
   </div>
 </header>
 <main id="contenido">
@@ -30,8 +30,12 @@
   </ol>
 </div></section>
 <section class="bloque alt"><div class="cont">
-  <h2>Cartas de jugada</h2>
-  <p>Las consigues al resolver bien un reto. Cada una cambia las condiciones del siguiente tiro.</p>
+  <h2>El mazo de cartas de jugada</h2>
+  <p>Las consigues al resolver bien un reto. Cada una cambia las condiciones del siguiente tiro. Prueba el mazo:</p>
+  <div class="mazo">
+    <div class="carta-grande" id="carta-grande" aria-live="polite"><span class="tipo">Mazo</span><h3>Saca una carta</h3><p style="margin:0">Pulsa el botón para ver tu jugada.</p></div>
+    <div><button class="btn" id="sacar" type="button">Sacar una carta</button></div>
+  </div>
   <div class="cartas">
     <div class="carta"><span class="tipo">Ayuda</span><h3>Pista del entrenador</h3><p>Te dicen la posición del vértice.</p></div>
     <div class="carta"><span class="tipo">Ayuda</span><h3>Pase extra</h3><p>Puedes repetir un tiro fallado.</p></div>
@@ -42,14 +46,15 @@
   </div>
 </div></section>
 <section class="bloque"><div class="cont">
-  <h2>Fichas de entrenamiento y sellos</h2>
-  <p><strong>Fichas:</strong> las consigues al explicar bien tu razonamiento. Puedes gastarlas para pedir una pista o repetir un tiro.</p>
-  <h3 style="margin-top:22px">Sellos de la temporada</h3>
-  <div class="rejilla">
-    <div class="sello"><span class="ins" aria-hidden="true">★</span><div><strong>Triple de último segundo</strong><br>Aciertas un tiro desde la línea de tres.</div></div>
-    <div class="sello"><span class="ins" aria-hidden="true">◆</span><div><strong>Tiro de vértice</strong><br>Hallas el vértice sin ayuda.</div></div>
-    <div class="sello"><span class="ins" aria-hidden="true">✚</span><div><strong>Defensa de hierro</strong><br>Explicas tu solución sin errores.</div></div>
-    <div class="sello"><span class="ins" aria-hidden="true">●</span><div><strong>Equipo de oro</strong><br>Todos participan en el partido.</div></div>
+  <h2>Fichas de entrenamiento</h2>
+  <p>Las consigues al explicar bien tu razonamiento. Puedes gastarlas para pedir una pista o repetir un tiro. Llevas la cuenta en la página <a href="equipo.html">Mi equipo</a>.</p>
+  <h2 style="margin-top:34px">Sellos de la temporada</h2>
+  <p>Son los trofeos de la historia. Pulsa un sello para marcarlo cuando lo consigas.</p>
+  <div class="insignias">
+    <button class="ins-b" data-id="triple" aria-pressed="false"><svg viewBox="0 0 96 96" aria-hidden="true"><path d="M30 60 L22 92 L40 82 L48 94 L56 82 L74 92 L66 60Z" fill="#0f2a43"/><circle cx="48" cy="42" r="34" fill="#e8730c" stroke="#0f2a43" stroke-width="4"/><circle cx="48" cy="42" r="26" fill="none" stroke="#fff" stroke-width="2" opacity=".75"/><polygon points="48,26 52.5,36 63.5,37.2 55.3,44.6 57.7,55.4 48,49.8 38.3,55.4 40.7,44.6 32.5,37.2 43.5,36" fill="#fff"/></svg><b>Triple de último segundo</b>Aciertas un tiro desde la línea de tres.<span class="est">Por conseguir</span></button>
+    <button class="ins-b" data-id="vertice" aria-pressed="false"><svg viewBox="0 0 96 96" aria-hidden="true"><path d="M30 60 L22 92 L40 82 L48 94 L56 82 L74 92 L66 60Z" fill="#0f2a43"/><circle cx="48" cy="42" r="34" fill="#1b7a9a" stroke="#0f2a43" stroke-width="4"/><circle cx="48" cy="42" r="26" fill="none" stroke="#fff" stroke-width="2" opacity=".75"/><polygon points="48,24 64,42 48,60 32,42" fill="#fff"/></svg><b>Tiro de vértice</b>Hallas el vértice sin ayuda.<span class="est">Por conseguir</span></button>
+    <button class="ins-b" data-id="hierro" aria-pressed="false"><svg viewBox="0 0 96 96" aria-hidden="true"><path d="M30 60 L22 92 L40 82 L48 94 L56 82 L74 92 L66 60Z" fill="#0f2a43"/><circle cx="48" cy="42" r="34" fill="#b3261e" stroke="#0f2a43" stroke-width="4"/><circle cx="48" cy="42" r="26" fill="none" stroke="#fff" stroke-width="2" opacity=".75"/><path d="M43 26h10v11h11v10H53v11H43V47H32V37h11z" fill="#fff"/></svg><b>Defensa de hierro</b>Explicas tu solución sin errores.<span class="est">Por conseguir</span></button>
+    <button class="ins-b" data-id="oro" aria-pressed="false"><svg viewBox="0 0 96 96" aria-hidden="true"><path d="M30 60 L22 92 L40 82 L48 94 L56 82 L74 92 L66 60Z" fill="#0f2a43"/><circle cx="48" cy="42" r="34" fill="#b8860b" stroke="#0f2a43" stroke-width="4"/><circle cx="48" cy="42" r="26" fill="none" stroke="#fff" stroke-width="2" opacity=".75"/><circle cx="48" cy="42" r="13" fill="#fff"/></svg><b>Equipo de oro</b>Todos participan en el partido.<span class="est">Por conseguir</span></button>
   </div>
 </div></section>
 <section class="bloque alt"><div class="cont">

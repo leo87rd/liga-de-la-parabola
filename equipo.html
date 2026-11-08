@@ -13,12 +13,12 @@
   <div class="cab-in">
     <a class="marca" href="index.html"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="#e8730c" stroke="#0f2a43" stroke-width="2"/><path d="M16 2v28M2 16h28M5.5 5.5c6 5 6 16 0 21M26.5 5.5c-6 5-6 16 0 21" fill="none" stroke="#0f2a43" stroke-width="1.8"/></svg><span>La Liga de la Parábola</span></a>
     <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menú</button>
-    <nav id="nav" aria-label="Principal"><a href="index.html">Inicio</a><a href="equipo.html" aria-current="page">Mi equipo</a><a href="calendario.html">Calendario</a><a href="reglas.html">Reglas</a><a href="misiones.html">Misiones</a><a href="recursos.html">Recursos</a><a href="bitacora.html">Bitácora</a></nav>
+    <nav id="nav" aria-label="Principal"><a href="index.html">Inicio</a><a href="historia.html">Historia</a><a href="equipo.html" aria-current="page">Mi equipo</a><a href="calendario.html">Calendario</a><a href="reglas.html">Reglas</a><a href="misiones.html">Misiones</a><a href="recursos.html">Recursos</a><a href="bitacora.html">Bitácora</a></nav>
   </div>
 </header>
 <main id="contenido">
 
-<div class="pagina-t"><div class="cont"><h1>Mi equipo</h1><p>Elige tu rol, el nombre del equipo y el número de tu camiseta. Lo que escribas se queda guardado en este dispositivo.</p></div></div>
+<div class="pagina-t"><div class="cont"><h1>Mi equipo</h1><p>Elige tu rol, tu jugador, el nombre y el escudo del equipo. Lo que elijas se queda guardado en este dispositivo.</p></div></div>
 <section class="bloque"><div class="cont">
   <h2>Elige tu rol</h2>
   <div class="roles" role="group" aria-label="Roles del equipo">
@@ -31,15 +31,31 @@
   <p class="chico">Los roles rotan cada semana para que todos pasen por todas las tareas.</p>
 </div></section>
 <section class="bloque alt"><div class="cont">
-  <h2>Tu camiseta</h2>
-  <div class="rejilla" style="align-items:start">
+  <h2>Tu jugador y el escudo del equipo</h2>
+  <div class="avatares" role="group" aria-label="Elige tu jugador">
+    <button class="av" data-i="0" aria-pressed="false" aria-label="Jugador 1"></button>
+    <button class="av" data-i="1" aria-pressed="false" aria-label="Jugador 2"></button>
+    <button class="av" data-i="2" aria-pressed="false" aria-label="Jugadora 3"></button>
+    <button class="av" data-i="3" aria-pressed="false" aria-label="Jugador 4"></button>
+    <button class="av" data-i="4" aria-pressed="false" aria-label="Jugadora 5"></button>
+    <button class="av" data-i="5" aria-pressed="false" aria-label="Jugador 6"></button>
+  </div>
+  <div class="rejilla" style="align-items:start;margin-top:22px">
     <div class="tarjeta">
-      <label for="eq-nombre">Nombre del equipo</label><input id="eq-nombre" type="text" maxlength="30" placeholder="Los Vértices">
+      <label for="eq-nombre">Nombre del equipo</label><input id="eq-nombre" type="text" maxlength="14" placeholder="Los Vértices">
       <label for="eq-numero">Número de camiseta</label><input id="eq-numero" type="text" inputmode="numeric" maxlength="2" value="10">
       <label for="eq-color">Color del equipo</label><input id="eq-color" type="color" value="#0f2a43">
     </div>
-    <div class="tarjeta"><h3 id="eq-cartel">Pon el nombre de tu equipo</h3><div class="camiseta" id="camiseta" aria-hidden="true">10</div></div>
+    <div class="tarjeta"><h3 id="eq-cartel">Pon el nombre de tu equipo</h3>
+      <div class="vista"><div id="avatar-vista"></div><div id="escudo-vista"></div></div></div>
   </div>
+</div></section>
+<section class="bloque"><div class="cont">
+  <h2>Tus fichas de entrenamiento</h2>
+  <p>Las consigues al explicar bien tu razonamiento y las gastas para pedir una pista o repetir un tiro.</p>
+  <div class="fichas"><button class="btn sec mini" id="fichas-menos" type="button" aria-label="Usar una ficha">− Usar una</button>
+    <output id="fichas-n" aria-live="polite">3</output>
+    <button class="btn mini" id="fichas-mas" type="button">+ Gané una</button></div>
 </div></section>
 
 </main>
